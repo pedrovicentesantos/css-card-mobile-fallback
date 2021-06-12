@@ -31,10 +31,6 @@ body {
   transition: transform 500ms ease;
 }
 
-.card:hover, .card:focus-within {
-  transform: scale(1.05);
-}
-
 .card-content {
   --padding: 1.5rem;
   padding: var(--padding);
@@ -43,8 +39,6 @@ body {
     hsl(20 0% 0% / 0.7) 40%,
     hsl(0 0% 0% / 1)
   );
-
-  
 }
 
 .title {
@@ -65,10 +59,6 @@ body {
   transition: transform 500ms ease;
 }
 
-.card:hover .title::after, .card:focus-within .title::after {
-  transform: scaleX(1);
-}
-
 .description {
   color: rgb(255 255 255 / 0.9);
 }
@@ -83,15 +73,16 @@ body {
   border-radius: 0.25rem;
 }
 
-.button:hover, .button:focus {
-  background: var(--clr-neutral-100);
-}
-
 @media (hover) {
+  .card:hover, .card:focus-within {
+    transform: scale(1.05);
+  }
+
   .card-content {
     transform: translateY(65%);
     transition: transform 500ms ease;
   }
+  
   .card:hover .card-content, .card:focus-within .card-content {
     transform: translateY(0%);
     transition-delay: 500ms;
@@ -113,6 +104,14 @@ body {
 
   .title::after {
     transform: scaleX(0);
+  }
+
+  .card:hover .title::after, .card:focus-within .title::after {
+    transform: scaleX(1);
+  }
+
+  .button:hover, .button:focus {
+    background: var(--clr-neutral-100);
   }
 }
 
